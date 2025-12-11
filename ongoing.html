@@ -44,7 +44,7 @@
 							<header class="major">
 								<h1>Currently ongoing</h1>
 								<p>Here you will find what I am currently working on. All the topics 
-									you will find in this paged are linked by one key concept: Graphs in Quantum Computing. 
+									you will find in this page are linked by one key concept: Graphs in Quantum Computing. 
 									If you think, for example,  about Automata or Random Walks or Machine Learning in the classical setting, 
 									they can all be described as Graphs (and a lot of other problems can be added to the list). 
 									Such characterization led, in the decades, to a lot of very powerful results obtained using only graph theory 
@@ -61,77 +61,54 @@
 						<section class="posts">
 							<article>
 								<header>
-									<span class="date">2022</span>
-									<h2>Graphs Encoding in Quantum Computing</h2>
-								</header>
-								<p> My very first paper as a PhD student was about Graphs encoding in Quantum Computing. 
-									It seems to be not a so trivial task because of the unitarity requirement of Quantum Computing. 
-									In my github you can also find a python project (<a href="https://github.com/RiccardoRomanello/FREEQO" target="_new">FREEQO</a>) in which we implemented an encoder that given a directed Graph, 
-									computes an unitary matrix that can be used as a circuit to traverse such graph.
-								</p>
-								<!-- <ul class="actions special">
-										<li><a href="downloads/mthesis.pdf" class="button" download="Master-Thesis.pdf">Thesis</a></li>
-								</ul> -->
-							</article>
-							<article>
-								<header>
-									<span class="date">2022</span>
-									<h2>Quantum Finite Automata</h2>
-								</header>
-								<p> I am working on the topics I introduced in my master thesis in order to publish a new 
-									paper. 
-									The aim of this research is to design a class of automata able to overcome the limitations of
-									state of the art Quantum Automata.  </p>
-								<!-- <ul class="actions special">
-										<li><a href="downloads/mthesis.pdf" class="button" download="Master-Thesis.pdf">Thesis</a></li>
-								</ul> -->
-							</article>
-							<article>
-								<header>
-									<span class="date">2022</span>
-									<h2>Quantum Machine Learning</h2>
-								</header>
-								<p> I got interested in this topic while practicing some demo using PennyLane. 
-									I am studying both theoretical aspects and practical approaches.
-									For what concerns the theoretical results,  I am interested in how the fundamental theorems in the classic case can be
-									translated into the quantum setting (like no free lunch theorem, or PAC learnability and so on). 
-									Moreover, being a computer scientist, I am interested in the complexity analysis of QML techniques. 
-									On the practical point of view, I always excercise using pennylane and their demos. 
-								</p>
-								<!-- <ul class="actions special">
-										<li><a href="downloads/mthesis.pdf" class="button" download="Master-Thesis.pdf">Thesis</a></li>
-								</ul> -->
-							</article>
-							<article>
-								<header>
-									<span class="date">2022</span>
-									<h2>Neural Network Compression</h2>
-								</header>
-								<p>Always concerning graphs, during the past months, we tackled the Neural Network Reduction 
-								problem (i.e. removing 'useless' neurons) using a theoretical approach. In particular, 
-								we borrowed the notion of Lumpability from graph theory and devised
-								a polinomial time procedure that can reduce the size of NNs without reducing their accuracy. </p>
-							</article>
-							<article>
-								<header>
-									<span class="date">2023</span>
+									<!-- <span class="date">2023</span> -->
 									<h2>Quantum Circuit Synthesis</h2>
 								</header>
-								<p> Once a Quantum Algorithm has been devised, we would be really happy if we could execute it. 
-									This seems a stupid assumptions, but it is not. In the Quantum Circuit architecture, the problem 
-									of turning a generic quantum algorithm (a really huge unitary matrix) into a sequence of smaller and executable 
-									operations (smaller gates/unitaries), is not easy at all. 
-									Such problem is called Quantum Circuit Synthesis and it is a really fervent research area nowadays.
-									Up to now, I have been working on the synthesis of circuits using the Clifford+T basis. 
+								<p> Designing a quantum algorithm is only half the battle; the real challenge lies in execution. While it might seem straightforward, translating a generic quantum algorithm—represented mathematically as a massive unitary matrix—into a sequence of operations that hardware can actually perform is a complex task.	
+									This process is known as Quantum Circuit Synthesis, a critical and active area of research. My current work focuses on a specific subset of circuits called CNOT circuits, crucial for building efficient encoders and decoders for Quantum Error Correcting codes. 
 								</p>
 							</article>
+
 							<article>
 								<header>
-									<span class="date">2024</span>
-									<h2>Quantum Circuit Routing and Mapping</h2>
+									<h2>Circuit Mapping and Routing</h2>
 								</header>
-								<p> Quantum circuit routing and mapping are essential steps in compiling high-level quantum algorithms into executable instructions for real quantum hardware. Due to the limited connectivity between qubits in current quantum processors, quantum operations often cannot be executed directly on the hardware as described in the abstract circuit. Routing addresses this challenge by inserting additional operations—such as SWAP gates—to move qubits into adjacent positions, while mapping refers to assigning logical qubits from the circuit to physical qubits on the device.
-									Efficient routing and mapping are critical for minimizing circuit depth and gate errors, both of which directly affect the fidelity of quantum computations. My research explores optimization techniques and algorithms for improving the performance of these compilation steps, with a focus on making quantum software more hardware-aware and scalable.
+								<p>
+									Once we have successfully synthesized a quantum circuit, the next major hurdle is preparing it for execution on a physical quantum processor. This involves Quantum Mapping and Routing, the process of adapting the abstract, logical circuit to the physical constraints of the hardware.
+									Physical architectures often restrict which qubits can interact directly (connectivity limitations). Mapping involves assigning logical qubits to available physical qubits, while routing inserts necessary SWAP gates to move quantum information around the processor, ensuring that interacting qubits are always physically adjacent. This problem is an NP-hard optimization challenge, as the addition of SWAP gates significantly increases the circuit depth and execution time, directly impacting the final algorithm's fidelity.
+									My line of research is that of tackling these tasks exploiting graph theory and concepts coming from theoretical CS. 
+								</p>
+							</article>
+
+							<article>
+								<header>
+									<h2>Quantum Error Correction</h2>
+								</header>
+								<p>
+									Quantum information is incredibly fragile, making it highly susceptible to decoherence and external noise. This necessitates the use of Quantum Error Correction (QEC), a critical field focused on protecting quantum computations from environmental errors.
+									Unlike classical error correction, which uses redundancy to find and flip bad bits, QEC must protect fragile superpositions. It achieves this by encoding one logical qubit into an entangled state distributed across several physical qubits (syndrome measurement). My work involves studying the design and implementation efficiency of some codes derived using graph tools introduced recently by Shor.
+								</p>
+							</article>
+
+							<article>
+								<header>
+									<h2>QAOA and complexity theory</h2>
+								</header>
+								<p>
+									The Quantum Approximate Optimization Algorithm (QAOA) is a leading paradigm in the field of variational quantum algorithms, designed to tackle difficult combinatorial optimization problems within the constraints of current quantum hardware (NISQ era).
+									QAOA works by iteratively applying two types of quantum operations: one that encodes the problem we want to solve (the Cost operation) and another that helps explore the possible solutions (the Mixing operation). The influence of these two operations is controlled by a set of parameters that are continually refined by a classical computer running alongside the quantum hardware.
+									My research focuses on the crucial pre-processing step: utilizing advanced tools from classical complexity theory and optimization techniques to map complex problems that contain restrictions or rules (constrained optimization) into the simplified, unrestricted format (unconstrained optimization) required by the QAOA framework. Furthermore, I explore new methods for efficiently refining the control parameters and analyzing the algorithm's guaranteed quality of solution.
+								</p>
+							</article>
+
+							<article>
+								<header>
+									<h2> Driven by interest</h2>
+								</header>
+								<p>
+									If you read my CV, you can notice that I have worked on a variety of topics. I define myself as driven by interest. Any topic that in some sense catches my attention is worth to be investigated. 
+									I am curious about any theoretical topic in CS and Quantum Computing, but I do not avoid writing code if it is necessary. 
+									Thus, if you have any nice idea you want to discuss, be in touch!
 								</p>
 							</article>
 						</section>
